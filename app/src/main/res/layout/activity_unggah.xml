@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:focusableInTouchMode="true"
+    android:focusable="true"
+    android:background="@color/brokenWhite"
+    tools:context=".UnggahActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="15dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="20dp">
+
+                <Button
+                    android:id="@+id/btnBack"
+                    android:paddingTop="15dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/arrow_left_solid" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text=" Tambah Unggahan"
+                    android:textColor="@color/magenta"
+                    android:textSize="23dp"
+                    android:textStyle="bold" />
+            </RelativeLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Judul Unggahan" />
+
+            <EditText
+                android:id="@+id/etJudul"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="7dp"
+                android:background="@drawable/rectangle_shape"
+                android:hint="Judul Unggahan"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="20dp"
+                android:singleLine="true"
+                android:textSize="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Deskripsi" />
+
+            <EditText
+                android:id="@+id/etDiskripsi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="7dp"
+                android:background="@drawable/rectangle_shape"
+                android:hint=""
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="20dp"
+                android:textSize="20dp" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rectangle_shape"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingBottom="20dp"
+                android:paddingRight="20dp">
+                <Button
+                    android:id="@+id/btnPilihMedia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pilih" />
+
+                <EditText
+                    android:id="@+id/etNamaFile"
+                    android:layout_marginLeft="5dp"
+                    android:hint="Tidak Ada file terpiliih"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:background="@color/white"
+                    android:singleLine="true"
+                    android:editable="false"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kategori Unggahan" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <Spinner
+                    android:id="@+id/spKategoriUnggahan"
+                    android:layout_width="match_parent"
+                    android:layout_height="59dp"
+                    android:background="@drawable/spinner_profile"
+                    android:spinnerMode="dropdown"
+
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:layout_width="25dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginRight="23dp"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/caret_down_solid" />
+            </RelativeLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Kegiatan Terkait" />
+
+            <EditText
+                android:id="@+id/etKegiatan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="7dp"
+                android:background="@drawable/rectangle_shape"
+                android:hint="Nama Kegiatan"
+                android:paddingLeft="10dp"
+                android:paddingTop="10dp"
+                android:paddingRight="20dp"
+                android:paddingBottom="20dp"
+                android:singleLine="true"
+                android:textSize="20dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tanggal Kegiatan" />
+
+            <LinearLayout
+                android:id="@+id/layoutChoseDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rectangle_shape"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingBottom="20dp"
+                android:paddingRight="20dp">
+
+                <EditText
+                    android:id="@+id/etTanggalKegiatan"
+                    android:layout_marginRight="5dp"
+                    android:hint="Tanggal Kegiatan"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:background="@color/white"
+                    android:singleLine="true"
+                    android:editable="false"
+                    android:layout_height="wrap_content" />
+                <Button
+                    android:id="@+id/btnPilihTanggal"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@drawable/calendar_solid"/>
+            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dokumen Pelangkap" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rectangle_shape"
+                android:paddingTop="10dp"
+                android:paddingLeft="10dp"
+                android:paddingBottom="20dp"
+                android:paddingRight="20dp">
+                <Button
+                    android:id="@+id/btnPilihDoc1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pilih" />
+
+                <EditText
+                    android:editable="false"
+                    android:id="@+id/etNamaDoc1"
+                    android:layout_marginLeft="5dp"
+                    android:hint="Tidak Ada file terpiliih"
+                    android:layout_weight="1"
+                    android:layout_width="wrap_content"
+                    android:background="@color/white"
+                    android:singleLine="true"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/rectangle_shape"-->
+<!--                android:paddingTop="10dp"-->
+<!--                android:paddingLeft="10dp"-->
+<!--                android:paddingBottom="20dp"-->
+<!--                android:paddingRight="20dp">-->
+<!--                <Button-->
+<!--                    android:id="@+id/btnPilihDoc2"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Pilih" />-->
+
+<!--                <EditText-->
+<!--                    android:id="@+id/etNamaDoc2"-->
+<!--                    android:editable="false"-->
+<!--                    android:layout_marginLeft="5dp"-->
+<!--                    android:hint="Tidak Ada file terpiliih"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:background="@color/white"-->
+<!--                    android:singleLine="true"-->
+<!--                    android:layout_height="wrap_content" />-->
+<!--            </LinearLayout>-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:background="@drawable/rectangle_shape"-->
+<!--                android:paddingTop="10dp"-->
+<!--                android:paddingLeft="10dp"-->
+<!--                android:paddingBottom="20dp"-->
+<!--                android:paddingRight="20dp">-->
+<!--                <Button-->
+<!--                    android:id="@+id/btnPilihDoc3"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Pilih" />-->
+
+<!--                <EditText-->
+<!--                    android:editable="false"-->
+<!--                    android:id="@+id/etNamaDoc3"-->
+<!--                    android:layout_marginLeft="5dp"-->
+<!--                    android:hint="Tidak Ada file terpiliih"-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:background="@color/white"-->
+<!--                    android:singleLine="true"-->
+<!--                    android:layout_height="wrap_content" />-->
+<!--            </LinearLayout>-->
+            <Button
+                android:id="@+id/btnUnggah"
+                android:text="Unggah"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

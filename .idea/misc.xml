@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/drawable/caret_down_solid.xml" value="0.1415" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/drawable/file_excel_solid.xml" value="0.12" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/drawable/file_pdf_solid.xml" value="0.12" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/drawable/file_word_solid.xml" value="0.12" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/drawable/film_solid.xml" value="0.12" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/drawable/horizontal_line.xml" value="0.1415" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/drawable/image_solid.xml" value="0.12" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/drawable/spinner_profile.xml" value="0.1415" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_detail_karya.xml" value="0.23941605839416058" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_detail_stakeholder.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_detail_unggahan.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_karya.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_main.xml" value="0.2359375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_profile.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_stakeholders.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_unggah.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_unggahan.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_unggahan_diterima.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_unggahan_ditinjau.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_unggahan_ditolak.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/layout_dialog_editprofile.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/row_dokumen_karya.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/row_karya.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/row_stakeholder.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/row_unggahan.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/menu/side_top_navigation.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
