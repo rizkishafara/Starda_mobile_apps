@@ -29,7 +29,7 @@ public class SplashScreen extends AppCompatActivity {
                     startActivity(home);
                     finish();
                 }else {
-                    Intent login = new Intent(SplashScreen.this, com.example.stardaapp.LoginActivity.class);
+                    Intent login = new Intent(SplashScreen.this, GuestMainActivity.class);
                     startActivity(login);
                     finish();
                 }

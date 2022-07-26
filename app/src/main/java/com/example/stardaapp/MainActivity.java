@@ -36,6 +36,7 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
     RelativeLayout btnProfile, btnUnggah, btnStakeholders, btnGaleri;
+
     LinearLayout btnDitinjau,btnDitolak,btnDiterima;
     Intent intent;
     BaseApiService mApiService;
@@ -55,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        btnGaleri= findViewById(R.id.btnGaleriKarya);
         mContext = this;
         mApiService = UtilsApi.getAPIService();
 
@@ -66,7 +68,7 @@ public class MainActivity extends AppCompatActivity {
         btnProfile= findViewById(R.id.btnBiodata);
         btnUnggah= findViewById(R.id.btnMulaiUnggah);
         btnStakeholders= findViewById(R.id.btnStakeholders);
-        btnGaleri= findViewById(R.id.btnGaleriKarya);
+
         btnDropdownMenu = (LinearLayout) findViewById(R.id.btnDropdownMenu);
 
         btnDiterima = findViewById(R.id.btnUnggahanDiterima);
@@ -107,13 +109,12 @@ public class MainActivity extends AppCompatActivity {
                 mContext.startActivity(intent);
             }
         });
+
         btnGaleri.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                loading = ProgressDialog.show(mContext, null, "harap tunggu...", true, false);
-                intent = new Intent(mContext,KaryaActivity.class);
-                loading.dismiss();
-                mContext.startActivity(intent);
+                intent = new Intent(MainActivity.this,KaryaActivity.class);
+                MainActivity.this.startActivity(intent);
             }
         });
 
@@ -129,9 +130,9 @@ public class MainActivity extends AppCompatActivity {
                             case(R.id.menu_profile):
                                 getDataUser();
                                 break;
-                            case (R.id.menu_changepswd):
-                                Toast.makeText(getApplicationContext(), "You have clicked " + menuItem.getTitle(), Toast.LENGTH_LONG).show();
-                                break;
+//                            case (R.id.menu_changepswd):
+//                                Toast.makeText(getApplicationContext(), "You have clicked " + menuItem.getTitle(), Toast.LENGTH_LONG).show();
+//                                break;
                             case (R.id.menu_logout):
                                 SharedPreferences.Editor editor = sharedPreferences.edit();
                                 editor.clear();
@@ -172,6 +173,12 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(mContext,UnggahanDitolakActivity.class);
                 loading.dismiss();
                 mContext.startActivity(intent);
+            }
+        });
+        profile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                getDataUser();
             }
         });
     }
@@ -215,15 +222,18 @@ public class MainActivity extends AppCompatActivity {
                         mContext.startActivity(intent);
                     }catch (JSONException e) {
                         e.printStackTrace();
+                        loading.dismiss();
                     } catch (IOException e) {
                         e.printStackTrace();
+                        loading.dismiss();
                     }
                 }
             }
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-
+                loading.dismiss();
+                Log.e("failure",t.getLocalizedMessage());
             }
         });
     }

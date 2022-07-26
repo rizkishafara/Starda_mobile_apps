@@ -16,6 +16,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.StardaApp">
         <activity
+            android:name=".GuestMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DashboardGuestActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditDokumenUnggahanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditUnggahanActivity"
+            android:exported="false" />
+        <activity
             android:name=".UnggahanDitolakActivity"
             android:exported="false" />
         <activity

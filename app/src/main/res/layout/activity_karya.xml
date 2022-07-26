@@ -5,6 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/brokenWhite"
+    android:focusableInTouchMode="true"
+    android:focusable="true"
     tools:context=".KaryaActivity">
     <RelativeLayout
         android:id="@+id/bar"
@@ -24,17 +26,92 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="Karya Stakeholder"
+            android:text="Galeri Dokumentasi"
             android:textColor="@color/magenta"
             android:textSize="23dp"
             android:textStyle="bold" />
     </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/layoutSubBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bar"
+        android:orientation="horizontal">
 
+        <RelativeLayout
+            android:id="@+id/layoutSearch"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="60dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="10dp"
+            android:background="@drawable/rectangle_shape"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingTop="10dp"
+            android:paddingRight="20dp"
+            android:paddingBottom="18dp">
+
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="40dp"
+                android:background="@null"
+                android:hint="Cari"
+                android:singleLine="true"
+                android:textSize="20dp" />
+
+            <Button
+                android:id="@+id/btnSearch"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentRight="true"
+                android:background="@drawable/ic_baseline_search_24" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/layoutFilter"
+            android:layout_toRightOf="@+id/layoutSearch"
+            android:layout_width="wrap_content"
+            android:adjustViewBounds="true"
+            android:layout_alignParentRight="true"
+            android:gravity="right"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:background="@drawable/rectangle_shape"
+                android:gravity="center"
+                android:paddingLeft="15dp"
+                android:layout_weight="1"
+                android:paddingTop="15dp"
+                android:paddingRight="25dp"
+                android:paddingBottom="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="Filter"
+                    android:textColor="@color/magenta"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:src="@drawable/sliders_solid"
+                    android:tint="@color/magenta" />
+
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/bar"
+        android:layout_below="@+id/layoutSubBar"
         android:padding="10dp"></androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>

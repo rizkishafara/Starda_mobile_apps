@@ -76,12 +76,13 @@ public class ProfileActivity extends AppCompatActivity implements EasyPermission
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
-        Bundle extras=getIntent().getExtras();
 
 //        ButterKnife.bind(this);
         mContext = this;
         mApiService = UtilsApi.getAPIService();
         sharedPreferences = getSharedPreferences("user", MODE_PRIVATE);
+
+        Bundle extras=getIntent().getExtras();
 
         id=extras.getString("id");
         nama=extras.getString("nama");
@@ -397,7 +398,7 @@ public class ProfileActivity extends AppCompatActivity implements EasyPermission
                     ArrayAdapter<String> adapter = new ArrayAdapter<>(mContext, android.R.layout.simple_spinner_item, listSpinner);
                     adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                     spKeahlian.setAdapter(adapter);
-                    if(keahlian != null){
+                    if(spKeahlian != null){
                         spKeahlian.setSelection(((ArrayAdapter)spKeahlian.getAdapter()).getPosition(keahlian));
                     }else{
                         Toast.makeText(mContext, "Gagal set value adapter keahlian", Toast.LENGTH_SHORT).show();

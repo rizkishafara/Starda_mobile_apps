@@ -39,6 +39,9 @@ public class UnggahanAdapter extends RecyclerView.Adapter<UnggahanAdapter.Unggah
     }
     public interface ClickedItem{
         public void ClickedUnggahan(UnggahanResponse unggahanResponse);
+        public void ClickedHapus(UnggahanResponse unggahanResponse);
+        public void ClickedEdit(UnggahanResponse unggahanResponse);
+        public void ClickedAlasan(UnggahanResponse unggahanResponse);
     }
 
     //click adapter
@@ -83,6 +86,24 @@ public class UnggahanAdapter extends RecyclerView.Adapter<UnggahanAdapter.Unggah
             @Override
             public void onClick(View view) {
                 clickedItem.ClickedUnggahan(unggahanResponse);
+            }
+        });
+        btnHapus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickedItem.ClickedHapus(unggahanResponse);
+            }
+        });
+        btnEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickedItem.ClickedEdit(unggahanResponse);
+            }
+        });
+        btnAlasan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                clickedItem.ClickedAlasan(unggahanResponse);
             }
         });
 

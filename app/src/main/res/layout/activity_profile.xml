@@ -181,10 +181,10 @@
 
                     <ImageView
                         android:layout_width="25dp"
-                        android:layout_marginTop="9dp"
-                        android:layout_marginRight="23dp"
                         android:layout_height="30dp"
                         android:layout_alignParentRight="true"
+                        android:layout_marginTop="9dp"
+                        android:layout_marginRight="23dp"
                         android:src="@drawable/caret_down_solid" />
                 </RelativeLayout>
 
@@ -228,7 +228,7 @@
                         android:layout_height="59dp"
                         android:background="@drawable/spinner_profile"
                         android:spinnerMode="dropdown"
-                        android:textSize="20dp"/>
+                        android:textSize="20dp" />
 
                     <ImageView
                         android:layout_width="25dp"

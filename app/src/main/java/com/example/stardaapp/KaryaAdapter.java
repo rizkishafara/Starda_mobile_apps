@@ -20,7 +20,7 @@ import java.util.List;
 public class KaryaAdapter extends RecyclerView.Adapter<KaryaAdapter.KaryaAdapterVH>{
     private List<KaryaResponse> responseKaryaList;
     private Context mContext;
-    String id_produk,title_produk,name_produk,desc_produk,kategori_file,cat_file,status_produk,upload_date,uri;
+    String id_produk,title_produk,cat_file,uri;
     View layoutGallery;
     private KaryaAdapter.ClickedItem clickedItem;
     int imageResource;

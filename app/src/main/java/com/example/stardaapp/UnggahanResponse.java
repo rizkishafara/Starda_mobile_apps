@@ -3,7 +3,15 @@ package com.example.stardaapp;
 import java.io.Serializable;
 
 public class UnggahanResponse implements Serializable {
-    String id_user,id_produk, title_produk, name_produk,desc_produk,kategori_file,cat_file,status,upload_date,fullname,kegiatan,alasan;
+    String id_user,id_produk, title_produk, name_produk,desc_produk,kategori_file,cat_file,status,upload_date,fullname,kegiatan,alasan, tanggal_kegiatan;
+
+    public String getTanggal_kegiatan() {
+        return tanggal_kegiatan;
+    }
+
+    public void setTanggal_kegiatan(String tanggal_kegiatan) {
+        this.tanggal_kegiatan = tanggal_kegiatan;
+    }
 
     public String getId_user() {
         return id_user;
@@ -116,6 +124,7 @@ public class UnggahanResponse implements Serializable {
                 ", fullname='" + fullname + '\'' +
                 ", kegiatan='" + kegiatan + '\'' +
                 ", alasan='" + alasan + '\'' +
+                ", tanggal_kegiatan='" + tanggal_kegiatan + '\'' +
                 '}';
     }
 }

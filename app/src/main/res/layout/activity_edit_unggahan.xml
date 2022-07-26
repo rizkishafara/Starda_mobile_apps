@@ -4,23 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:focusableInTouchMode="true"
     android:focusable="true"
-    android:background="@color/brokenWhite"
-    tools:context=".UnggahActivity">
-
+    tools:context=".EditUnggahanActivity">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="5dp">
+        android:padding="15dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
             <RelativeLayout
-                android:layout_marginTop="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="20dp">
@@ -36,7 +31,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:text=" Tambah Unggahan"
+                    android:text="Edit Unggahan"
                     android:textColor="@color/magenta"
                     android:textSize="23dp"
                     android:textStyle="bold" />
@@ -100,18 +95,6 @@
                     android:singleLine="true"
                     android:editable="false"
                     android:layout_height="wrap_content" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="right"
-                android:layout_marginRight="10dp">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="*Max file size 100MB"
-                    android:textColor="@color/magenta"
-                    android:textSize="11.5dp"/>
             </LinearLayout>
 
             <TextView
@@ -188,24 +171,13 @@
                     android:layout_height="30dp"
                     android:background="@drawable/calendar_solid"/>
             </LinearLayout>
-            <RelativeLayout
+            <TextView
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="10dp">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Dokumen Pelangkap" />
-                <TextView
-                    android:layout_alignParentRight="true"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="*Minimal unggah 1 dokumen"
-                    android:textColor="@color/magenta"
-                    android:textSize="11.5dp"/>
-            </RelativeLayout>
+                android:text="Dokumen Pelangkap" />
             <LinearLayout
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/rectangle_shape"
@@ -230,64 +202,11 @@
                     android:singleLine="true"
                     android:layout_height="wrap_content" />
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rectangle_shape"
-                android:paddingTop="10dp"
-                android:paddingLeft="10dp"
-                android:paddingBottom="20dp"
-                android:paddingRight="20dp">
-                <Button
-                    android:id="@+id/btnPilihDoc2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Pilih" />
-
-                <EditText
-                    android:id="@+id/etNamaDoc2"
-                    android:editable="false"
-                    android:layout_marginLeft="5dp"
-                    android:hint="Tidak Ada file terpiliih"
-                    android:layout_weight="1"
-                    android:layout_width="wrap_content"
-                    android:background="@color/white"
-                    android:singleLine="true"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/rectangle_shape"
-                android:paddingTop="10dp"
-                android:paddingLeft="10dp"
-                android:paddingBottom="20dp"
-                android:paddingRight="20dp">
-                <Button
-                    android:id="@+id/btnPilihDoc3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Pilih" />
-
-                <EditText
-                    android:editable="false"
-                    android:id="@+id/etNamaDoc3"
-                    android:layout_marginLeft="5dp"
-                    android:hint="Tidak Ada file terpiliih"
-                    android:layout_weight="1"
-                    android:layout_width="wrap_content"
-                    android:background="@color/white"
-                    android:singleLine="true"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
             <Button
-                android:layout_marginRight="10dp"
                 android:id="@+id/btnUnggah"
-                android:layout_marginBottom="15dp"
                 android:text="Unggah"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
     </ScrollView>
-
 </LinearLayout>

@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
@@ -37,6 +38,7 @@ public class DetailStakeholderActivity extends AppCompatActivity implements Kary
     int imageResource;
     ProgressDialog loading;
     Button btnBack;
+    SharedPreferences sharedPreferences;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,6 +54,8 @@ public class DetailStakeholderActivity extends AppCompatActivity implements Kary
         ivPhoto = findViewById(R.id.ivPhoto);
 
         recyclerView = findViewById(R.id.rvGallery);
+
+        sharedPreferences = getSharedPreferences("user", MODE_PRIVATE);
 
 
         karyaAdapter = new KaryaAdapter(this::ClickedKarya);
@@ -77,12 +81,20 @@ public class DetailStakeholderActivity extends AppCompatActivity implements Kary
             Photo = stakeholdersResponse.getPhoto_user();
 
             tvFullname.setText(Fullname);
-            tvAlamat.setText(Alamat);
-            tvEmail.setText(Email);
-            tvPhone.setText(Phone);
             tvInstansi.setText(Instansi);
             tvKeahlian.setText(Keahlian);
             tvAbout.setText(About);
+
+            String namaUserLogin = sharedPreferences.getString("result_nama",null);
+            if(namaUserLogin == null){
+                tvAlamat.setText(Alamat.replaceAll(Alamat,"*****************"));
+                tvEmail.setText(Email.replaceAll(Email,"************@gmail.com"));
+                tvPhone.setText(Phone.replaceAll(Phone,"+62***********"));
+            }else{
+                tvAlamat.setText(Alamat);
+                tvEmail.setText(Email);
+                tvPhone.setText(Phone);
+            }
 
 
 

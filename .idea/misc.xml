@@ -3,33 +3,49 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/drawable/bars_solid.xml" value="0.12" />
         <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/drawable/caret_down_solid.xml" value="0.1415" />
         <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/drawable/file_excel_solid.xml" value="0.12" />
         <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/drawable/file_pdf_solid.xml" value="0.12" />
         <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/drawable/file_word_solid.xml" value="0.12" />
         <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/drawable/film_solid.xml" value="0.12" />
         <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/drawable/horizontal_line.xml" value="0.1415" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.155" />
         <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/drawable/image_solid.xml" value="0.12" />
         <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/drawable/spinner_profile.xml" value="0.1415" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_dashboard_guest.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_detail_karya.xml" value="0.23941605839416058" />
         <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_detail_stakeholder.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_detail_unggahan.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_edit_dokumen_unggahan.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_edit_unggahan.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_guest_galeri.xml" value="0.10885416666666667" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_guest_main.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_karya.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_login.xml" value="0.25" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_main.xml" value="0.2359375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_main.xml" value="0.264" />
         <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_profile.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_splash_screen.xml" value="0.25" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_stakeholders.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_stakeholders.xml" value="0.264" />
         <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_unggah.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_unggahan.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_unggahan_diterima.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_unggahan_ditinjau.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/activity_unggahan_ditolak.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/dialog_edit_dokumen_unggahan.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/dialog_edit_unggahan.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/dialog_filter.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/dialog_filter_stakeholder.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/dialog_filter_unggahan.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/dialog_unduhan.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/layout_dialog_editprofile.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/row_dokumen_karya.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/row_edit_dokumen.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/row_karya.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/row_stakeholder.xml" value="0.264" />
         <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/row_unggahan.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/layout/row_user_pengunduh.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/StardaApp/app/src/main/res/menu/side_top_navigation.xml" value="0.25" />
       </map>
     </option>

@@ -3,13 +3,13 @@ package com.example.stardaapp;
 import static com.example.stardaapp.FileUtils.getPath;
 import static com.example.stardaapp.ProfileActivity.REQUEST_IMAGE;
 
-import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
-import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
@@ -35,6 +35,7 @@ import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
@@ -65,7 +66,7 @@ public class UnggahActivity<doc> extends AppCompatActivity {
 
     Spinner spKategoriProduk;
 
-    ArrayList doc;
+
     RequestBody requestId,requestJudul,requestDeskripsi,requestKegiatan,requestTanggalKegiatan,requestKategori;
 
     @Override
@@ -86,14 +87,14 @@ public class UnggahActivity<doc> extends AppCompatActivity {
         etKegiatan = findViewById(R.id.etKegiatan);
         etTanggalKegiatan = findViewById(R.id.etTanggalKegiatan);
         etNamaDoc1 = findViewById(R.id.etNamaDoc1);
-//        etNamaDoc2 = findViewById(R.id.etNamaDoc2);
-//        etNamaDoc3 = findViewById(R.id.etNamaDoc3);
+        etNamaDoc2 = findViewById(R.id.etNamaDoc2);
+        etNamaDoc3 = findViewById(R.id.etNamaDoc3);
 
         btnBack = findViewById(R.id.btnBack);
         btnPilihMedia = findViewById(R.id.btnPilihMedia);
         btnPilihDoc1 = findViewById(R.id.btnPilihDoc1);
-//        btnPilihDoc2 = findViewById(R.id.btnPilihDoc2);
-//        btnPilihDoc3 = findViewById(R.id.btnPilihDoc3);
+        btnPilihDoc2 = findViewById(R.id.btnPilihDoc2);
+        btnPilihDoc3 = findViewById(R.id.btnPilihDoc3);
         btnUnggah = findViewById(R.id.btnUnggah);
         btnTanggal = findViewById(R.id.btnPilihTanggal);
 
@@ -103,7 +104,7 @@ public class UnggahActivity<doc> extends AppCompatActivity {
 
         dateFormatter = new SimpleDateFormat("yyyy-MM-dd", Locale.US);
 
-
+        ArrayList<String> docPathArray = new ArrayList<>();
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,7 +137,8 @@ public class UnggahActivity<doc> extends AppCompatActivity {
         btnPilihMedia.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                reqMedia(REQUEST_IMAGE);
+//                reqMedia(REQUEST_IMAGE);
+                dialogPilihMedia();
             }
         });
         btnPilihDoc1.setOnClickListener(new View.OnClickListener() {
@@ -145,6 +147,21 @@ public class UnggahActivity<doc> extends AppCompatActivity {
                 reqDoc1(REQUEST_IMAGE);
             }
         });
+
+        btnPilihDoc2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reqDoc2(REQUEST_IMAGE);
+            }
+        });
+
+        btnPilihDoc3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                reqDoc3(REQUEST_IMAGE);
+            }
+        });
+
         btnUnggah.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -165,6 +182,37 @@ public class UnggahActivity<doc> extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void dialogPilihMedia() {
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(mContext);
+
+        // set title dialog
+        alertDialogBuilder.setTitle("Syarat Unggah Dokumentasi");
+
+        // set pesan dari dialog
+        alertDialogBuilder
+                .setMessage("Media yang diunggah harus berupa Foto atau Video Dokumentasi dalam sebuah kegiatan pembuatan produk")
+                .setCancelable(false)
+                .setPositiveButton("Pilih Media", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        reqMedia(REQUEST_IMAGE);
+                    }
+                })
+                .setNegativeButton("Batal",new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // jika tombol ini diklik, akan menutup dialog
+                        // dan tidak terjadi apa2
+                        dialog.cancel();
+                    }
+                });
+
+        // membuat alert dialog dari builder
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // menampilkan alert dialog
+        alertDialog.show();
     }
 
     private void initSpinnerKategoriProduk() {
@@ -236,6 +284,35 @@ public class UnggahActivity<doc> extends AppCompatActivity {
                 }
         }
     }
+    void reqDoc2(int requestCode){
+        switch (requestCode){
+            case REQUEST_IMAGE:
+                if(EasyPermissions.hasPermissions(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                    Intent galleryIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                    galleryIntent.setType("*/*");
+                    galleryIntent = Intent.createChooser(galleryIntent, "Choose a file");
+                    startActivityForResult(galleryIntent, 2);
+                    break;
+                }else{
+                    EasyPermissions.requestPermissions(this,"Izinkan Aplikasi Mengakses Storage?",REQUEST_IMAGE, Manifest.permission.READ_EXTERNAL_STORAGE);
+                }
+        }
+    }
+
+    void reqDoc3(int requestCode){
+        switch (requestCode){
+            case REQUEST_IMAGE:
+                if(EasyPermissions.hasPermissions(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                    Intent galleryIntent = new Intent(Intent.ACTION_GET_CONTENT);
+                    galleryIntent.setType("*/*");
+                    galleryIntent = Intent.createChooser(galleryIntent, "Choose a file");
+                    startActivityForResult(galleryIntent, 3);
+                    break;
+                }else{
+                    EasyPermissions.requestPermissions(this,"Izinkan Aplikasi Mengakses Storage?",REQUEST_IMAGE, Manifest.permission.READ_EXTERNAL_STORAGE);
+                }
+        }
+    }
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -268,13 +345,40 @@ public class UnggahActivity<doc> extends AppCompatActivity {
                 cursor.moveToFirst();
 
                 docPath = getPath(fileUri, mContext);
-
 //                Log.d("docpath", String.valueOf(docPath));
 
                 int columnIndex = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME);
                 String docName1 = cursor.getString(columnIndex);
                 cursor.close();
                 etNamaDoc1.setText(docName1);
+            } else if (requestCode == 2 && resultCode == RESULT_OK && null != data) {
+                Uri fileUri = data.getData();
+                Cursor cursor = getContentResolver().query(fileUri, null, null, null, null);
+                assert cursor != null;
+                cursor.moveToFirst();
+
+                docPath2 = getPath(fileUri, mContext);
+
+//                Log.d("docpath", String.valueOf(docPath));
+
+                int columnIndex = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME);
+                String docName2 = cursor.getString(columnIndex);
+                cursor.close();
+                etNamaDoc2.setText(docName2);
+            } else if (requestCode == 3 && resultCode == RESULT_OK && null != data) {
+                Uri fileUri = data.getData();
+                Cursor cursor = getContentResolver().query(fileUri, null, null, null, null);
+                assert cursor != null;
+                cursor.moveToFirst();
+
+                docPath3 = getPath(fileUri, mContext);
+
+//                Log.d("docpath", String.valueOf(docPath));
+
+                int columnIndex = cursor.getColumnIndex(OpenableColumns.DISPLAY_NAME);
+                String docName3 = cursor.getString(columnIndex);
+                cursor.close();
+                etNamaDoc3.setText(docName3);
             }
         } catch (Exception e) {
 
@@ -288,57 +392,97 @@ public class UnggahActivity<doc> extends AppCompatActivity {
     private void uploadMultipleFiles() {
         loading = ProgressDialog.show(mContext, null, "Tunggu Sebentar...", true, false);;
 
-        List<MultipartBody.Part> parts = new ArrayList<>();
-        // Map is used to multipart the file using okhttp3.RequestBody
-        File file = new File(mediaPath);
-        File file1 = new File(String.valueOf(docPath));
-
-        Log.d("list", parts.toString());
-        RequestBody requestBody1 = RequestBody.create(MediaType.parse("*/*"), file);
-        RequestBody requestBody2 = RequestBody.create(MediaType.parse("*/*"), file1);
-
-
-        MultipartBody.Part fileToUpload1 = MultipartBody.Part.createFormData("file", file.getName(), requestBody1);
-        MultipartBody.Part fileToUpload2 = MultipartBody.Part.createFormData("file1", file1.getName(), requestBody2);
 
         judul = etJudul.getText().toString();
         deskripsi = etDeskripsi.getText().toString();
         kegiatan = etKegiatan.getText().toString();
         tanggalKegiatan = etTanggalKegiatan.getText().toString();
 
-        requestId = RequestBody.create(MediaType.parse("text/plain"), idUser);
-        requestJudul = RequestBody.create(MediaType.parse("text/plain"), judul);
-        requestDeskripsi = RequestBody.create(MediaType.parse("text/plain"), deskripsi);
-        requestKegiatan = RequestBody.create(MediaType.parse("text/plain"), kegiatan);
-        requestTanggalKegiatan = RequestBody.create(MediaType.parse("text/plain"), tanggalKegiatan);
-        requestKategori = RequestBody.create(MediaType.parse("text/plain"), kategori);
 
-        mApiService.unggahKarya(requestId,requestJudul,requestKategori, requestDeskripsi,requestKegiatan,requestTanggalKegiatan,fileToUpload1, fileToUpload2).enqueue(new Callback<ResponseUnggah>() {
-            @Override
-            public void onResponse(Call<ResponseUnggah> call, Response<ResponseUnggah> response) {
-                ResponseUnggah serverResponse = response.body();
-                if (serverResponse != null) {
-                    if (serverResponse.getSuccess()) {
-                        Toast.makeText(getApplicationContext(), serverResponse.getMessage(), Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(mContext, MainActivity.class);
-                        startActivity(intent);
+        String namaMedia = etNamaMedia.getText().toString();
+        String namaDoc1 = etNamaDoc1.getText().toString();
+
+        if (judul.isEmpty() ||
+                deskripsi.isEmpty() ||
+                kegiatan.isEmpty() ||
+                tanggalKegiatan.isEmpty() ||
+                kategori.isEmpty()){
+            loading.dismiss();
+            Toast.makeText(getApplicationContext(), "Kolom tidak boleh ada yang kosong", Toast.LENGTH_SHORT).show();
+        }else if(namaMedia.isEmpty()){
+            loading.dismiss();
+            Toast.makeText(getApplicationContext(), "Anda belum memilih Video atau Foto dokumentasi", Toast.LENGTH_SHORT).show();
+        }else if(namaDoc1.isEmpty()){
+            loading.dismiss();
+            Toast.makeText(getApplicationContext(), "Minimal unggah 1 dokumen terkait", Toast.LENGTH_SHORT).show();
+        }else{
+            ArrayList<String> docPathArray = new ArrayList<>();
+
+            if(docPath!=null){
+                docPathArray.add(docPath);
+            }if(docPath2!=null){
+                docPathArray.add(docPath2);
+            }
+            if (docPath3!=null){
+                docPathArray.add(docPath3);
+            }
+            MultipartBody.Part[] fileDocToUpload = new MultipartBody.Part[docPathArray.size()];
+
+            for(int i = 0 ; i < docPathArray.size() ; i++ ){
+                File fileDoc = new File(docPathArray.get(i));
+                Log.d("fileDoc", String.valueOf(fileDoc));
+                fileDocToUpload[i] = MultipartBody.Part.createFormData("fileDoc[]", fileDoc.getName(),
+                        RequestBody.create(MediaType.parse("*/*"), fileDoc));
+            }
+
+            File file = new File(mediaPath);
+
+            RequestBody requestBody1 = RequestBody.create(MediaType.parse("multipart/form-data"), file);
+
+            MultipartBody.Part fileToUpload1 = MultipartBody.Part.createFormData("file", file.getName(), requestBody1);
+
+            requestId = RequestBody.create(MediaType.parse("text/plain"), idUser);
+            requestJudul = RequestBody.create(MediaType.parse("text/plain"), judul);
+            requestDeskripsi = RequestBody.create(MediaType.parse("text/plain"), deskripsi);
+            requestKegiatan = RequestBody.create(MediaType.parse("text/plain"), kegiatan);
+            requestTanggalKegiatan = RequestBody.create(MediaType.parse("text/plain"), tanggalKegiatan);
+            requestKategori = RequestBody.create(MediaType.parse("text/plain"), kategori);
+
+            mApiService.unggahKarya(requestId,
+                    requestJudul,
+                    requestKategori,
+                    requestDeskripsi,
+                    requestKegiatan,
+                    requestTanggalKegiatan,
+                    fileToUpload1,
+                    fileDocToUpload).enqueue(new Callback<ResponseUnggah>() {
+                ////        mApiService.unggahKarya(requestBody).enqueue(new Callback<ResponseUnggah>() {
+                @Override
+                public void onResponse(Call<ResponseUnggah> call, Response<ResponseUnggah> response) {
+                    ResponseUnggah serverResponse = response.body();
+                    if (serverResponse != null) {
+                        if (serverResponse.getSuccess()) {
+                            Toast.makeText(getApplicationContext(), serverResponse.getMessage(), Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(mContext, MainActivity.class);
+                            startActivity(intent);
+                        } else {
+                            Toast.makeText(getApplicationContext(), serverResponse.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
                     } else {
-                        Toast.makeText(getApplicationContext(), serverResponse.getMessage(), Toast.LENGTH_SHORT).show();
+                        assert serverResponse != null;
+                        Log.v("Response", serverResponse.toString());
                     }
-                } else {
-                    assert serverResponse != null;
-                    Log.v("Response", serverResponse.toString());
+                    loading.dismiss();
                 }
-                loading.dismiss();
-            }
 
-            @Override
-            public void onFailure(Call<ResponseUnggah> call, Throwable t) {
-                loading.dismiss();
-                Log.e("ERROR", t.getMessage());
-//                Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_LONG).show();
-            }
-        });
+                @Override
+                public void onFailure(Call<ResponseUnggah> call, Throwable t) {
+                    loading.dismiss();
+                    Log.e("ERROR", t.getMessage());
+                    Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_LONG).show();
+                }
+            });
+        }
     }
 
 

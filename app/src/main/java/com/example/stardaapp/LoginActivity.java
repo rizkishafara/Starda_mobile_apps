@@ -28,7 +28,7 @@ import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
 
-    Button btn_login;
+    Button btn_login,btn_register;
     EditText input_email, input_password;
     Intent intent;
     ProgressDialog loading;
@@ -42,8 +42,17 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         mContext = this;
+
+        btn_register = findViewById(R.id.btnRegister);
+        btn_register.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(mContext,RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         mApiService = UtilsApi.getAPIService(); // meng-init yang ada di package apihelper
         initComponents();
@@ -85,7 +94,8 @@ public class LoginActivity extends AppCompatActivity {
                                 if (jsonRESULTS.getString("error").equals("false")){
                                     // Jika login berhasil maka data nama yang ada di response API
                                     // akan diparsing ke activity selanjutnya.
-                                    Toast.makeText(mContext, "BERHASIL LOGIN", Toast.LENGTH_SHORT).show();
+                                    String error_message = jsonRESULTS.getString("error_msg");
+                                    Toast.makeText(mContext, error_message, Toast.LENGTH_SHORT).show();
                                     String id = jsonRESULTS.getJSONObject("user").getString("id");
                                     String nama = jsonRESULTS.getJSONObject("user").getString("nama");
                                     String photo = jsonRESULTS.getJSONObject("user").getString("photo");

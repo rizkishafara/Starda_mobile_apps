@@ -20,7 +20,8 @@
             android:id="@+id/user_image"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_centerVertical="true"/>
+            android:layout_centerVertical="true"
+            android:src="@drawable/profile"/>
 
         <LinearLayout
             android:id="@+id/TxtHello"
@@ -202,7 +203,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Isikan Biodata anda pada Halaman Profile yang dapat anda akses dengan menekan menu 'Lengkapi Biodata'"/>
+                                android:text="Isikan Biodata anda pada Halaman Profile yang dapat anda akses dengan menekan foto profile anda"/>
                         </TableRow>
                         <TableRow >
                             <TextView android:text="2." android:textSize="13dp"/>
@@ -211,7 +212,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Setelah anda mengisi Biodata dengan lengkap, anda akan dapat mengunggah dokumentasi karya anda pada menu Unggah yang berada pada bawah layar device anda"/>
+                                android:text="Setelah anda mengisi Biodata dengan lengkap, anda akan dapat mengunggah karya anda pada menu Unggah yang berada pada bawah layar device anda"/>
                         </TableRow>
                         <TableRow>
                             <TextView android:text="3." android:textSize="13dp"/>
@@ -220,7 +221,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Pada menu unggah dokumentasi anda diwajibkan menyertakan dokumen pelangkap minimal 1 dokumen dan maksimal 3 dokumen pelengkap yang berkaitan dengan dokumentasi yang akan anda unggah"/>
+                                android:text="Pada menu unggah karya anda diwajibkan menyertakan dokumen pelangkap minimal 1 dokumen dan maksimal 3 dokumen pelengkap yang berkaitan dengan karya yang akan anda unggah"/>
                         </TableRow>
                         <TableRow>
                             <TextView android:text="4." android:textSize="13dp"/>
@@ -229,7 +230,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:text="Anda juga dapat melihat hasil unggahan dari stakeholders lain pada menu 'Galeri Dokumentasi' yang terdapat pada bawah layar device anda"/>
+                                android:text="Anda juga dapat melihat hasil unggahan dari stakeholders lain pada menu Karya yang terdapat pada bawah layar device anda"/>
                         </TableRow>
                     </TableLayout>
                 </LinearLayout>
@@ -291,7 +292,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="20dp"
-                        android:text="Unggah Dokumentasi"
+                        android:text="Mulai Unggah Karya"
                         android:textColor="@color/magenta"
                         android:textSize="25dp"
                         android:textStyle="bold" />
@@ -361,7 +362,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingRight="20dp"
-                        android:text="Galeri Dokumentasi"
+                        android:text="Galeri Karya"
                         android:textColor="@color/white"
                         android:textSize="25dp"
                         android:textStyle="bold" />
